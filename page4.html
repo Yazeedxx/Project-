@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calories Burn</title>
+  <link rel="stylesheet" href="mysheetc.css">
+</head>
+<body>
+  <div class="container" id="page4">
+    <h2>Weekly Calories Burn</h2>
+    <p>Enter your weekly calories burned:</p>
+    <input type="number" id="burn" placeholder="Enter calories">
+    <button class="next-btn" onclick="showMessage()">Submit</button>
+    <p id="message"></p>
+    <div class="buttons">
+      <button class="back-btn" onclick="window.location.href='page3.html'">Back</button>
+      <button class="next-btn" id="nextBtn" style="display:none;" onclick="window.location.href='page5.html'">Next</button>
+    </div>
+  </div>
+  <script>
+    function showMessage() {
+      const burn = document.getElementById("burn").value;
+      const msg = document.getElementById("message");
+      const nextBtn = document.getElementById("nextBtn");
+      msg.className = ""; 
+      nextBtn.style.display = "none";
+      if (burn === "") {
+        msg.textContent = "Please enter your number.";
+        msg.classList.add("bad");
+      } else if (burn < 1000) {
+        msg.textContent = "You need to move more this week.";
+        msg.classList.add("bad");
+      } else if (burn < 2500) {
+        msg.textContent = "Good job! Keep going.";
+        msg.classList.add("ok");
+      } else if (burn < 4000) {
+        msg.textContent = "Great! You are very active.";
+        msg.classList.add("good");
+      } else {
+        msg.textContent = "Excellent! Keep it up!";
+        msg.classList.add("excellent");
+      }
+      nextBtn.style.display = "inline-block"; 
+    }
+  </script>
+   </div>
+  <div class="footer"> 
+    <p>We only need an approximate number for your weekly calorie burn.</p>
+  </div>
+</body>
+</html>

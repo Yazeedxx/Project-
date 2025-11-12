@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Info</title>
+  <link rel="stylesheet" href="mysheetc.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Please enter your information</h2>
+
+    <form onsubmit="nextPage(event)">
+      <label>Full Name:</label><br>
+      <input type="text" name="name" required><br><br>
+
+      <label>Gender:</label>
+      <div class="gender-selection">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="back-btn" onclick="window.location.href='index.html'">Back</button>
+        <button type="submit" class="next-btn">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function nextPage(e) {
+      e.preventDefault();
+      window.location.href = "page2.html";
+    }
+  </script>
+   </div>
+  <div class="footer"> 
+    <p>Fitness meals require your name and gender.</p>
+  </div>
+</body>
+</html>
